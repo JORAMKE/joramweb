@@ -1,0 +1,287 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Friendship</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <style>:root {
+        --primary: rgb(211, 38, 38);
+        --overlay: rgba(211, 38, 38, 0.6);
+      }
+      
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body {
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        background-color: black;
+        color: rgba(255, 255, 255, 0.85);
+      }
+      
+      main {
+        width: 600px;
+        height: 300px;
+        font: 0.7rem impact, sans-serif;
+      
+        & header {
+          font-size: 1.2rem;
+          text-transform: uppercase;
+          margin-bottom: 2.25rem;
+          color: white;
+      
+          & span {
+            color: var(--primary);
+          }
+        }
+      
+        & section {
+          display: flex;
+          gap: 2rem;
+        }
+      }
+      
+      .indexes,
+      .tabs {
+        list-style-type: none;
+      }
+      
+      .indexes {
+        font-size: 1rem;
+      
+        & li {
+          padding: 1rem;
+          border: 1px solid transparent;
+          cursor: pointer;
+        }
+      }
+      
+      .tabs {
+        position: relative;
+      }
+      
+      .tab {
+        position: absolute;
+        display: flex;
+        width: 530px;
+        height: 225px;
+        opacity: 0;
+        background-color: black;
+        overflow: hidden;
+      }
+      
+      .tab-content {
+        position: relative;
+        z-index: 5;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 1rem;
+        opacity: 0;
+        transform: translateY(-5rem);
+      
+        & h3 {
+          font-family: helvetica;
+          font-weight: 900;
+          font-size: 1rem;
+          border-bottom: 1.5px solid white;
+          padding-bottom: 1rem;
+        }
+      
+        & p {
+          font-family: helvetica;
+          font-weight: 100;
+          line-height: 2;
+          color: rgba(255, 255, 255, 0.7);
+          overflow:auto;
+        }
+      
+        & button {
+          width: fit-content;
+          background-color: transparent;
+          color: white;
+          border: 1px solid white;
+          font-size: 0.7rem;
+          padding: 0.75rem 1rem;
+          cursor: pointer;
+        }
+      }
+      
+      @keyframes content {
+        100% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      .tab-image {
+        position: absolute;
+        right: 1rem;
+        width: 200px;
+        height: 200px;
+        opacity: 0;
+        transform: translateX(2rem);
+      
+        &::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          background-color: var(--overlay);
+          mix-blend-mode: multiply;
+        }
+      
+        & img {
+          width: inherit;
+          height: inherit;
+          object-fit: cover;
+          filter: grayscale(100%);
+        }
+      }
+      
+      @keyframes image {
+        100% {
+          opacity: 1;
+          width: 300px;
+          transform: translateX(0);
+        }
+      }
+      
+      .active .tab {
+        opacity: 1;
+        z-index: 5;
+      }
+      .active .tab-content {
+        animation: content 0.9s ease-out 0.4s forwards;
+      }
+      .active .tab-image {
+        animation: image 1s ease-out forwards;
+      }
+      </style>
+    <main>
+      <header>
+        <h2><span>Table</span> of content</h2>
+      </header>
+      <section>
+        <ul class="indexes">
+          <li data-index="0">01</li>
+          <li data-index="1">02</li>
+          <li data-index="2">03</li>
+          <li data-index="3">04</li>
+        </ul>
+        <ul class="tabs">
+          <li class="tab">
+            <article class="tab-content">
+              <h3>Brief Introduction</h3>
+              <p>
+                Muli Joram is my official name. Am a student and a frontend developer who is just upcoming. I am also a freelancer with a wide knowledge in many languages never mind what they are but just know that they are many. In many instances i just observe somebodies project and do observation learnig that's I observe and develop a similar approach. I even stel their codes and just do some little editing here and there such that the program looks as if its mne but actually its somebody's alse project. <br>
+                I know yo uknow much about my personality so I don't have to talk about that but there is something little i would like to say.
+                Sometimes i do portray some traits of a coward but actually am not a coward what am definitely doiung is <i>Timely planning</i>
+                <strong>They say that never raise your voice but improve you arguement</strong>
+                <br>Thats all what I know about myself
+                <br>Let me know what else you think about me and my weaknesses so that I can improve
+                Here is the platform
+                <br> <a href="tel:+254 7 40724051">Call me</a>
+                or
+                <a href="http://wa.me/+254740724051">Whatsapp am waiting for reply</a>
+
+              </p>
+              <button>Read More</button>
+            </article>
+            <div class="tab-image">
+              <img src="https://picsum.photos/id/345/1000/600" />
+            </div>
+          </li>
+          <li class="tab">
+            <article class="tab-content">
+              <h3>What I know about you</h3>
+              <p>
+                They say that "Friendship is the hardest thing in the world to explain. It's not something you learn in school. But if you haven't learned the meaning of friendship, you really haven't learned anything.”For me, I must guess that am a novice and am just being naive.
+                <br>I haven't yet learned so you can guess whom I am but as the latter states am just being naive so kindly undestand me. I do acknowledge the fact that shiet may happen but it's all right . I guess everything happens for a reson but from my side I always stand to make sure that I make the best out of me. <br>
+               For me I can't say that I know much about you but the little I know is that you are a <i>nice soul.</i> with a warm smile at all times and always in jovial mood. For your other traits I may not be conversant with them.
+              </p>
+              <button>Read More</button>
+            </article>
+            <div class="tab-image">
+              <img src="https://picsum.photos/id/352/1000/600" />
+            </div>
+          </li>
+          <li class="tab">
+            <article class="tab-content">
+              <h3>What about valentine</h3>
+              <p>
+              For me I dont beleive that true love still excists between youths but the good thing is that i dont care.
+              Those who would like to fall in love can go on but what I know is that they are just lust-driven and its the situation which forces them to fall in these mare relationships. <br>
+              What say that you are only together for satisfying you bodies need s and I second them scientist prove is that the person you are currently dating has a probability of <i>10%</i> of being your future spouse.
+              They say that you are only together for satisfying you bodies need s and I second them. <br>
+              As yourself <i>after a wedding why do couples go for honey moon</i> initially in the past they used to go for their first time intimacy but now the reason as to why they go is very different. They go just to finish the money which had been conributed for the wedding. Beleive me or not there is no girl below 23yrs who understands the meaning of love.
+              <br>What's yor view?
+              <br>
+              Anyway bestie nikona form ya valentine.
+                <br>
+                <a href="https://bit.ly/3OyD0r0">Click here to receive your most appropriate gift. </a>
+              </p>
+              <button>Read More</button>
+            </article>
+            <div class="tab-image">
+              <img src="https://picsum.photos/id/444/1000/600" />
+            </div>
+          </li>
+          <li class="tab">
+            <article class="tab-content">
+              <h3>Plans and Anticipations</h3>
+              <p>
+                Have got many plans about how and the things  I would like to accomplish in my life. what worries me most is the fact thaat things do no always go on as anticipated and out of the plans and the dreams that you always have you will only be able to accomplish 50% of them if only you work tirelessly. <br>
+                But what I know is that I have done what have got to do in life and everything else is beyond my control and I only have to wait for fate to portray itself. <br>
+                But what does the bible say;"seek first the kingdom of God and everything shall be added unto you". What i always hope and remain optimistic for is that one day <i>'Mambo itajipa'</i>
+              </p>
+              <button>Read More</button>
+            </article>
+            <div class="tab-image">
+              <img src="https://picsum.photos/id/451/1000/600" />
+            </div>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <script>const indexes = document.querySelectorAll(".indexes li");
+        const tabs = document.querySelectorAll(".tab");
+        const contents = document.querySelectorAll(".tab-content");
+        
+        function reset() {
+          for (let i = 0; i < tabs.length; i++) {
+            indexes[i].style.borderColor = "transparent";
+            tabs[i].style.zIndex = 0;
+            tabs[i].classList.remove("active");
+            contents[i].classList.remove("active");
+          }
+        }
+        function showTab(i) {
+          indexes[i].style.borderColor = "rgba(211,38,38,0.6)";
+          tabs[i].style.opacity = 1;
+          tabs[i].style.zIndex = 5;
+          tabs[i].classList.add("active");
+          contents[i].classList.add("active");
+        }
+        
+        function activate(e) {
+          if (!e.target.matches(".indexes li")) return;
+          reset();
+          showTab(e.target.dataset.index);
+        }
+        
+        const init = () => showTab(0);
+        
+        window.addEventListener("load", init, false);
+        window.addEventListener("click", activate, false);
+        </script>
+  </body>
+</html>
